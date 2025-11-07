@@ -1,0 +1,105 @@
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --accent:#2563eb;
+  --accent-2:#06b6d4;
+  --muted:#6b7280;
+  --radius:12px;
+  --maxwidth:1100px;
+  --glass: rgba(255,255,255,0.7);
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, #f6f8fb 0%, #eef2ff 60%);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.wrap{
+  max-width:var(--maxwidth);
+  margin:18px auto;
+  padding:16px;
+}
+
+.site-header{
+  margin-bottom:12px;
+}
+.site-header .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{display:flex; gap:12px; align-items:center}
+.logo{
+  width:48px; height:48px; border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(90deg,#e6f0ff,#f0fcff);
+  font-size:20px;
+}
+.brand h1{margin:0; font-size:1.1rem; color:var(--accent)}
+.subtitle{margin:0; font-size:0.85rem; color:var(--muted)}
+
+.nav a{margin-left:10px; color:var(--muted); text-decoration:none; font-weight:600}
+.nav a:hover{color:var(--accent)}
+
+.main .card{background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:0 8px 30px rgba(10,15,40,0.05); margin-bottom:16px}
+
+/* hero */
+.hero{display:flex; gap:18px; align-items:flex-start}
+.hero-left{flex:1}
+.hero-right{width:320px}
+.hero .lead{color:var(--muted); margin-top:6px}
+.cta-row{margin-top:14px; display:flex; gap:10px}
+.quick-features{display:flex; gap:10px; flex-wrap:wrap; list-style:none; padding:0; margin-top:12px}
+.quick-features li{background:#fbfdff; padding:8px 10px; border-radius:8px; font-weight:600; color:var(--muted)}
+
+/* small card */
+.small{padding:12px}
+.sample-output{min-height:110px; padding:10px; border-radius:8px; background:linear-gradient(180deg,#fbfdff,#ffffff); border:1px solid rgba(0,0,0,0.04); color:#111827; white-space:pre-wrap}
+.sample-actions{display:flex; gap:8px; margin-top:10px}
+
+/* grid features */
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+@media(max-width:920px){ .grid-3{grid-template-columns:1fr} .hero{flex-direction:column} .hero-right{width:100%} }
+
+/* pricing */
+.pricing-toggle{display:flex; justify-content:flex-end; margin-bottom:12px}
+.pricing-grid{display:flex; gap:12px; flex-wrap:wrap}
+.price-card{flex:1; min-width:220px; border-radius:12px; padding:14px; background:linear-gradient(180deg,#ffffff,#fbfdff); border:1px solid rgba(37,99,235,0.06)}
+.price-card.featured{transform:scale(1.03); border:1px solid rgba(37,99,235,0.12); box-shadow:0 12px 30px rgba(37,99,235,0.06)}
+.price{font-size:1.5rem; margin:8px 0}
+.price .currency{font-weight:700; margin-right:4px}
+.price .period{font-size:0.9rem; color:var(--muted); margin-left:6px}
+
+/* timeline */
+.timeline-list{padding-left:18px; color:var(--muted)}
+
+/* try form */
+.form-row{display:flex; gap:8px; margin-top:10px; align-items:center; flex-wrap:wrap}
+.form-row input, .form-row select, textarea{padding:10px; border-radius:8px; border:1px solid #e6eef6; min-width:200px}
+.form-row button{white-space:nowrap}
+
+/* result area */
+.result-area textarea{width:100%; padding:10px; border-radius:8px; border:1px solid #e6eef6; resize:vertical}
+.result-actions{display:flex; gap:8px; margin-top:8px}
+
+/* buttons */
+.btn{border:0; padding:8px 12px; border-radius:10px; cursor:pointer; background:#111827; color:white; font-weight:700}
+.btn.ghost{background:transparent; color:var(--accent); border:1px solid rgba(0,0,0,0.06)}
+.btn.primary{background:var(--accent); color:white}
+
+/* footer */
+.footer{display:flex; justify-content:space-between; align-items:center}
+
+/* toast */
+.toast{position:fixed; right:20px; bottom:20px; background:#111827; color:#fff; padding:10px 14px; border-radius:10px; opacity:0; transform:translateY(10px); transition:all .2s ease; pointer-events:none}
+.toast.show{opacity:1; transform:translateY(0)}
+
+/* accessibility */
+.muted{color:var(--muted)}

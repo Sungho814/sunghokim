@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>ColdSnap AI</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ColdSnap AI — Hyper-Personalized AI Email Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo">❄️</div>
+        <div>
+          <h1>ColdSnap AI</h1>
+          <p class="subtitle">Hyper-personalized AI cold emails that actually get replies</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#try">Try</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap main">
+    <section class="hero card">
+      <div class="hero-left">
+        <h2>Generate hyper-personalized cold emails from LinkedIn or website URLs — instantly.</h2>
+        <p class="lead">ColdSnap AI analyzes prospect profiles and crafts human, persuasive outreach tailored to your goal: sales, recruiting, or partnership.</p>
+        <div class="cta-row">
+          <button id="tryBtn" class="btn primary">Try Sample Email</button>
+          <button class="btn ghost" onclick="openLink('https://coldsnap.ai')">Visit Website</button>
+        </div>
+
+        <ul class="quick-features">
+          <li>Auto-summarize prospects</li>
+          <li>Custom tone & goal selection</li>
+          <li>Save, edit, export</li>
+          <li>Stripe subscriptions & team accounts</li>
+        </ul>
+      </div>
+
+      <div class="hero-right card small">
+        <h3>Sample output</h3>
+        <div id="sampleOutput" class="sample-output">
+          <em>Click “Try Sample Email” to generate a mock email.</em>
+        </div>
+        <div class="sample-actions">
+          <button id="copySample" class="btn">Copy</button>
+          <button id="editSample" class="btn ghost">Edit</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="card grid-3">
+      <div>
+        <h3>Core Functionality</h3>
+        <ul>
+          <li>Generate cold emails from LinkedIn / website URLs</li>
+          <li>Auto-summarize prospect profiles</li>
+          <li>Explain reason for outreach (contextual hooks)</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Workflow</h3>
+        <ul>
+          <li>Save, edit, and export generated emails</li>
+          <li>Custom tone & goal selection: Sales / Hiring / Outreach</li>
+          <li>n8n / Make automation for CRM sync</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Platform</h3>
+        <ul>
+          <li>Frontend: Next.js</li>
+          <li>Backend: Supabase (Postgres + Auth)</li>
+          <li>AI: OpenAI GPT-5-mini</li>
+          <li>Payments: Stripe Subscriptions</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="pricing" class="card">
+      <h2>Pricing</h2>
+      <div class="pricing-toggle">
+        <label><input type="checkbox" id="billingToggle"> Show monthly</label>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h4>Starter</h4>
+          <div class="price"><span class="currency">$</span><span class="amount" data-monthly="29" data-yearly="290">29</span><span class="period">/mo</span></div>
+          <ul>
+            <li>200 emails / month</li>
+            <li>Email templates + basic personalization</li>
+            <li>Email export</li>
+          </ul>
+          <button class="btn">Start $29</button>
+        </div>
+
+        <div class="price-card featured">
+          <h4>Pro</h4>
+          <div class="price"><span class="currency">$</span><span class="amount" data-monthly="79" data-yearly="790">79</span><span class="period">/mo</span></div>
+          <ul>
+            <li>1,000 emails / month</li>
+            <li>Advanced personalization</li>
+            <li>Team seats (basic)</li>
+          </ul>
+          <button class="btn primary">Get Pro</button>
+        </div>
+
+        <div class="price-card">
+          <h4>Agency</h4>
+          <div class="price"><span class="currency">$</span><span class="amount" data-monthly="199" data-yearly="1990">199</span><span class="period">/mo</span></div>
+          <ul>
+            <li>Unlimited emails</li>
+            <li>API access & integrations</li>
+            <li>Priority support</li>
+          </ul>
+          <button class="btn">Contact Sales</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="card">
+      <h2>Timeline / Milestones</h2>
+      <ol class="timeline-list">
+        <li><strong>Week 1–2:</strong> UI/UX design & auth setup</li>
+        <li><strong>Week 3–4:</strong> Integrate OpenAI & Supabase</li>
+        <li><strong>Week 5:</strong> Stripe payment implementation</li>
+        <li><strong>Week 6–7:</strong> n8n automation and CRM sync</li>
+        <li><strong>Week 8:</strong> Beta testing and public launch</li>
+      </ol>
+    </section>
+
+    <section id="try" class="card">
+      <h2>Try it (mock)</h2>
+      <p>Paste a public LinkedIn or website URL (mock) and choose tone/goal. This is a client-side mock generator for demo purposes.</p>
+
+      <div class="form-row">
+        <input id="inputUrl" placeholder="https://linkedin.com/in/example or https://company.com" />
+        <select id="toneSelect">
+          <option value="professional">Professional</option>
+          <option value="friendly">Friendly</option>
+          <option value="direct">Direct</option>
+          <option value="curiosity">Curiosity-driven</option>
+        </select>
+        <select id="goalSelect">
+          <option value="sales">Sales outreach</option>
+          <option value="recruit">Recruiting</option>
+          <option value="partnership">Partnership</option>
+        </select>
+        <button id="generateBtn" class="btn primary">Generate (Mock)</button>
+      </div>
+
+      <div class="result-area card small">
+        <h4>Generated Email (editable)</h4>
+        <textarea id="generatedEmail" rows="6">Your generated email will appear here.</textarea>
+        <div class="result-actions">
+          <button id="copyEmail" class="btn">Copy Email</button>
+          <button id="saveEmail" class="btn ghost">Save</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Use Cases</h3>
+      <p>B2B sales teams, recruiters, agency owners, founders — use ColdSnap AI for lead generation, personalized recruiting emails, and outreach that scales.</p>
+      <p class="muted">Platform stack suggested: Next.js, Supabase, GPT-5-mini, Stripe, n8n/Make, deploy on Vercel/Netlify.</p>
+    </section>
+
+    <footer class="card footer">
+      <div>
+        <small>&copy; ColdSnap AI • Mock demo • Not connected to live APIs in this demo</small>
+      </div>
+    </footer>
+  </main>
+
+  <!-- toast -->
+  <div id="toast" class="toast">Copied!</div>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
